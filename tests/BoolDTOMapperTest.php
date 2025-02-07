@@ -11,6 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 final class BoolDTOMapperTest extends TestCase
 {
+    const JSON_DATA = '{"isEmpty": true}';
+
     private DTOMapper $mapper;
 
     public function setUp(): void
@@ -23,7 +25,7 @@ final class BoolDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             BoolNullable::class,
             json_decode(
-                '{"isEmpty": true}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -40,7 +42,7 @@ final class BoolDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             BoolNotNullable::class,
             json_decode(
-                '{"isEmpty": true}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -57,7 +59,7 @@ final class BoolDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             BoolNullableWithDefault::class,
             json_decode(
-                '{"isEmpty": true}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -74,7 +76,7 @@ final class BoolDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             BoolNotNullableWithDefault::class,
             json_decode(
-                '{"isEmpty": true}',
+                self::JSON_DATA,
                 true
             )
         );

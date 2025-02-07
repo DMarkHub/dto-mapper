@@ -11,6 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 final class StringDTOMapperTest extends TestCase
 {
+    const JSON_DATA = '{"name": "Name"}';
+
     private DTOMapper $mapper;
 
     public function setUp(): void
@@ -23,7 +25,7 @@ final class StringDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             StringNullable::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -40,7 +42,7 @@ final class StringDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             StringNotNullable::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -57,7 +59,7 @@ final class StringDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             StringNullableWithDefault::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -74,7 +76,7 @@ final class StringDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             StringNotNullableWithDefault::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );

@@ -11,6 +11,9 @@ use PHPUnit\Framework\TestCase;
 
 final class FloatDTOMapperTest extends TestCase
 {
+    const JSON_DATA = '{"price":0.99}';
+
+
     private DTOMapper $mapper;
 
     public function setUp(): void
@@ -23,7 +26,7 @@ final class FloatDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             FloatNullable::class,
             json_decode(
-                '{"price":0.99}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -57,7 +60,7 @@ final class FloatDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             FloatNotNullable::class,
             json_decode(
-                '{"price": 0.99}',
+                self::JSON_DATA,
                 true
             )
         );

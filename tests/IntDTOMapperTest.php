@@ -11,6 +11,8 @@ use DMarkHub\DTOMapper\Tests\Class\BuiltIn\Scalar\Int\IntNullableWithDefault;
 
 final class IntDTOMapperTest extends TestCase
 {
+    const JSON_DATA = '{"name": "Name"}';
+
     private DTOMapper $mapper;
 
     public function setUp(): void
@@ -23,7 +25,7 @@ final class IntDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             IntNullable::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -57,7 +59,7 @@ final class IntDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             IntNullableWithDefault::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );
@@ -74,7 +76,7 @@ final class IntDTOMapperTest extends TestCase
         $data = $this->mapper->map(
             IntNotNullableWithDefault::class,
             json_decode(
-                '{"name": "Name"}',
+                self::JSON_DATA,
                 true
             )
         );

@@ -8,7 +8,7 @@ class DTOFactory
 {
     public static function create(string $classname, array $preparedData): object
     {
-        $output = new $classname;
+        $output = new $classname();
 
         foreach ($preparedData as $key => $value) {
             $output->{$key} = $value;

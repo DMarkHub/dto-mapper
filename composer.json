@@ -5,6 +5,8 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
+            "DMarkHub\\DTOMapper\\Tests\\Class\\": "tests/class/",
+            "DMarkHub\\DTOMapper\\Tests\\": "tests/",
             "DMarkHub\\DTOMapper\\": "src/"
         }
     },

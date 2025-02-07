@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DMarkHub\DTOMapper;
 
 use ReflectionClass;
-use RuntimeException;
+use ReflectionProperty;
 
 class DTOMapper
 {
@@ -20,22 +20,17 @@ class DTOMapper
             $name = $property->getName();
             $value = $data[$name] ?? $property->getDefaultValue();
 
-            // if ($value === null && !$property->getType()->allowsNull()) {
-            //     throw new RuntimeException(sprintf('%s property of %s class cannot be null', $name, $classname));
-            // }
-
-            // if ($value && $property->getType()->isBuiltin()) {
-            //     $value = match ($property->getType()->getName()) {
-            //         'int' => (int) $value,
-            //         'float' => (float) $value,
-            //         'string' => (string) $value,
-            //         'bool' => (bool) $value,
-            //     };
-            // }
-
-            $preparedData[$name] = $value;
+            $preparedData[$name] = self::filterValue($property, $value);
         }
 
         return DTOFactory::create($classname, $preparedData);
+    }
+
+    private static function filterValue(ReflectionProperty $reflectionProperty, mixed $value): mixed
+    {
+        return match ($reflectionProperty->getType()->getName()) {
+            'string' => filter_var($value, FILTER_SANITIZE_FULL_SPECIAL_CHARS),
+            default => $value,
+        };
     }
 }

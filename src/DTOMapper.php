@@ -20,7 +20,11 @@ class DTOMapper
             $name = $property->getName();
             $value = $data[$name] ?? $property->getDefaultValue();
 
-            $preparedData[$name] = self::filterValue($property, $value);
+            if ($property->getType()->isBuiltin()) {
+                $preparedData[$name] = self::filterValue($property, $value);
+            } else {
+
+            }
         }
 
         return DTOFactory::create($classname, $preparedData);

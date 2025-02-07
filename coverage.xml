@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1738962596">
+  <project timestamp="1738962596">
+    <package name="DMarkHub\DTOMapper">
+      <file name="/home/dawid/GitHub/DMarkHub/dto-mapper/src/DTOFactory.php">
+        <class name="DMarkHub\DTOMapper\DTOFactory" namespace="DMarkHub\DTOMapper">
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        </class>
+        <line num="9" type="method" name="create" visibility="public" complexity="2" crap="2" count="17"/>
+        <line num="11" type="stmt" count="17"/>
+        <line num="13" type="stmt" count="17"/>
+        <line num="14" type="stmt" count="17"/>
+        <line num="17" type="stmt" count="17"/>
+        <metrics loc="20" ncloc="20" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+      </file>
+      <file name="/home/dawid/GitHub/DMarkHub/dto-mapper/src/DTOMapper.php">
+        <class name="DMarkHub\DTOMapper\DTOMapper" namespace="DMarkHub\DTOMapper">
+          <metrics complexity="6" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+        </class>
+        <line num="12" type="method" name="map" visibility="public" complexity="3" crap="3" count="17"/>
+        <line num="14" type="stmt" count="17"/>
+        <line num="15" type="stmt" count="17"/>
+        <line num="17" type="stmt" count="17"/>
+        <line num="19" type="stmt" count="17"/>
+        <line num="20" type="stmt" count="17"/>
+        <line num="21" type="stmt" count="17"/>
+        <line num="23" type="stmt" count="17"/>
+        <line num="24" type="stmt" count="17"/>
+        <line num="30" type="stmt" count="17"/>
+        <line num="33" type="method" name="filterValue" visibility="private" complexity="3" crap="3" count="17"/>
+        <line num="35" type="stmt" count="17"/>
+        <line num="36" type="stmt" count="17"/>
+        <line num="37" type="stmt" count="17"/>
+        <line num="38" type="stmt" count="17"/>
+        <metrics loc="41" ncloc="41" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="15" coveredelements="15"/>
+      </file>
+    </package>
+    <metrics files="2" loc="61" ncloc="61" classes="2" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="20" coveredelements="20"/>
+  </project>
+</coverage>
